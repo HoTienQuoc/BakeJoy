@@ -1,18 +1,25 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Inter:wght@300;400;600&display=swap');
 
-:root{
+:root {
   --bake-cream: #FFF6F2;
   --bake-peach: #FFEBDD;
-  --bake-coral: #E06B53; /* headline orange */
+  --bake-coral: #E06B53;
+  /* headline orange */
   --bake-soft: #F8D8CE;
-  --bake-deep: #0F4D48;  /* teal/dark */
-  --card-shadow: 0 10px 30px rgba(15,77,72,0.08);
+  --bake-deep: #0F4D48;
+  /* teal/dark */
+  --card-shadow: 0 10px 30px rgba(15, 77, 72, 0.08);
 }
 
 /* fonts */
-.h-playful { font-family: 'Baloo 2', cursive; }
-.body-sans { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.h-playful {
+  font-family: 'Baloo 2', cursive;
+}
+
+.body-sans {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
 
 /* scalloped stamp effect (CSS mask fallback) */
 .stamp {
@@ -21,9 +28,9 @@
   border-radius: 18px;
   /* Use CSS mask with repeating-radial-gradient for scallops */
   -webkit-mask-image: radial-gradient(circle at 0 0, transparent 0 8px, black 9px),
-                     radial-gradient(circle at 100% 0, transparent 0 8px, black 9px),
-                     radial-gradient(circle at 0 100%, transparent 0 8px, black 9px),
-                     radial-gradient(circle at 100% 100%, transparent 0 8px, black 9px);
+    radial-gradient(circle at 100% 0, transparent 0 8px, black 9px),
+    radial-gradient(circle at 0 100%, transparent 0 8px, black 9px),
+    radial-gradient(circle at 100% 100%, transparent 0 8px, black 9px);
   mask-composite: exclude;
 }
 
@@ -37,7 +44,8 @@
 .wave-top {
   position: relative;
 }
-.wave-top::after{
+
+.wave-top::after {
   content: "";
   position: absolute;
   left: 0;
@@ -50,4 +58,3 @@
 }
 
 @import "tailwindcss";
-
