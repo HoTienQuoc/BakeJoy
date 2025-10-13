@@ -7,22 +7,20 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-amber-50 text-gray-900">
-      {/* Header */}
-      <header className="bg-white shadow-sm py-4 px-6 md:px-20 flex justify-between items-center sticky top-0 z-20">
-        <h1 className="font-serif text-2xl text-orange-600">BakeJoy</h1>
-        <nav className="hidden md:flex gap-8 text-sm text-gray-600">
-          <a href="#">About</a>
-          <a href="#">Products</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
-        </nav>
-        <button className="border border-orange-400 text-orange-500 px-4 py-1.5 rounded-full hover:bg-orange-50">
-          Register
-        </button>
+    <div className="min-h-screen">
+      <header className="bg-[var(--bake-cream)] sticky top-0 z-30 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="h-playful text-xl text-[var(--bake-deep)]">BAKEJÖY</div>
+          <nav className="hidden md:flex gap-6 text-sm text-gray-600">
+            <a>Products</a>
+            <a>Journal</a>
+            <a>Contact</a>
+          </nav>
+          <button className="text-sm border border-[var(--bake-deep)] rounded-full px-3 py-1">Register</button>
+        </div>
       </header>
 
-      <main className="flex-1">
+      <main>
         <HeroSection />
         <SignatureSection />
         <OccasionSection />
