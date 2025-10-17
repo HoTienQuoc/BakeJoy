@@ -2,15 +2,11 @@ import HeaderSection from "../src/components/HeaderSection";
 import Carousel from "../src/components/Carousel";
 import Section7 from "../src/components/Section7";
 import FooterSection from "../src/components/FooterSection";
-import image1 from "../src/images/deva-williamson-S2jw81lfrG0-unsplash.jpg"
-import image2 from "../src/images/deva-williamson-ntfGWVbBiO0-unsplash.jpg"
-import image3 from "../src/images/katie-rosario-QNyRp21hb5I-unsplash.jpg"
+import SignatureProducts from "./components/SignatureProducts";
 
 
 
-const images = [
-  image1,image2,image3
-];
+
 
 
 const App = () => {
@@ -23,7 +19,11 @@ const App = () => {
 
       {/* Carousel */}
       <section className="w-full flex-grow">
-        <Carousel images={images} />
+        <Carousel/>
+      </section>
+
+      <section className="w-full">
+        <SignatureProducts/>
       </section>
 
       {/* Section7 */}
