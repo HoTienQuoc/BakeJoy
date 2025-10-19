@@ -3,10 +3,10 @@ import Carousel from "../src/components/Carousel";
 import Section7 from "../src/components/Section7";
 import FooterSection from "../src/components/FooterSection";
 import SignatureProducts from "./components/SignatureProducts";
-
-
-
-
+import Demo from "./components/Demo";
+import BakeJoyComponent from "./components/BakeJoyComponent";
+import HowToOrderComponent from "./components/HowToOrderComponent";
+import CakeJournalComponent from "./components/CakeJournalComponent";
 
 
 const App = () => {
@@ -24,6 +24,22 @@ const App = () => {
 
       <section className="w-full">
         <SignatureProducts/>
+      </section>
+
+      <section className="w-full">
+        <Demo/>
+      </section>
+
+      <section className="w-full">
+        <BakeJoyComponent/>
+      </section>
+
+      <section className="w-full">
+        <HowToOrderComponent/>
+      </section>
+
+      <section className="w-full">
+        <CakeJournalComponent/>
       </section>
 
       {/* Section7 */}
