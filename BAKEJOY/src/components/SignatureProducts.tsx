@@ -1,9 +1,9 @@
 import React from "react";
 import { ShoppingBag } from "lucide-react";
 
-import image1 from "../images/deva-williamson-S2jw81lfrG0-unsplash.jpg";
-import image2 from "../images/deva-williamson-ntfGWVbBiO0-unsplash.jpg";
-import image3 from "../images/katie-rosario-QNyRp21hb5I-unsplash.jpg";
+import image1 from "../images/deva-williamson-2.jpg";
+import image2 from "../images/deva-williamson-1.jpg";
+import image3 from "../images/katie.jpg";
 
 interface Product {
     name: string;

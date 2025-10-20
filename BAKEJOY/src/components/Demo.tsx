@@ -1,5 +1,5 @@
 import React from 'react';
-import laptopImage from '../images/deva-williamson-ntfGWVbBiO0-unsplash.jpg'; // hoặc ảnh từ public
+import laptopImage from '../images/deva-williamson-1.jpg'; // hoặc ảnh từ public
 
 
 interface ChatBubbleProps {

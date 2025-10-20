@@ -57,4 +57,18 @@
     pointer-events: none;
 }
 
+@font-face {
+    font-family: 'CustomFont';
+    src: url('/fonts/knicknack-regular.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/knicknack-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/knicknack-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/fonts/knicknack-regular.woff') format('woff'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
+
+
 @import "tailwindcss";

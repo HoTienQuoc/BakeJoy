@@ -1,115 +1,129 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState } from 'react';
+import croissant from '../images/deva-williamson-1.jpg'
+import '../App.css'
 
-import image1 from "../images/deva-williamson-S2jw81lfrG0-unsplash.jpg";
-import image2 from "../images/deva-williamson-ntfGWVbBiO0-unsplash.jpg";
-import image3 from "../images/katie-rosario-QNyRp21hb5I-unsplash.jpg";
+const Carousel: React.FC = () => {
+  const slides = [
+    {
+      id: 1,
+      image: croissant,
+      title: 'Thiên nhiên tươi đẹp',
+    },
+    {
+      id: 2,
+      image: croissant,
+      title: 'Thành phố hiện đại',
+    },
+    {
+      id: 3,
+      image: croissant,
+      title: 'Đỉnh núi hùng vĩ',
+    },
+  ];
 
-interface Slide {
-  title1: string;
-  title2: string;
-  description: string;
-  image: string;
-  label: string;
-}
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const slides: Slide[] = [
-  {
-    title1: "Delight in",
-    title2: "every bites!",
-    description:
-      "Experience the joy of perfectly baked cakes, made with love and crafted to bring a smile to every celebration.",
-    image: image1,
-    label: "— Choco Croissant ( 0.6$ )",
-  },
-  {
-    title1: "Taste the",
-    title2: "freshness!",
-    description:
-      "From oven to you — enjoy pastries that melt in your mouth, baked every morning.",
-    image: image2,
-    label: "— Strawberry Danish ( 0.8$ )",
-  },
-  {
-    title1: "Sweet and",
-    title2: "crunchy!",
-    description:
-      "Perfectly flaky layers that make every bite unforgettable.",
-    image: image3,
-    label: "— Almond Puff ( 1.0$ )",
-  },
-];
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
-export default function HeroCarousel() {
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const slide = slides[current];
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <section className="relative w-full h-[600px] bg-[#FFF8F3] overflow-hidden flex items-center justify-center">
-      {/* Background image */}
-      <img
-        key={slide.image}
-        src={slide.image}
-        alt={slide.title2}
-        className="absolute inset-0 w-full h-full object-contain opacity-90 transition-all duration-700 ease-in-out z-0"
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl px-6 flex flex-col gap-6">
-        {/* Title 1 */}
-        <h1 className="text-6xl md:text-7xl font-bold text-[#2D6753] leading-tight text-left">
-          {slide.title1}
-        </h1>
-
-        {/* Title 2 — nằm bên phải nhưng text căn trái */}
-        <div className="w-full flex justify-end">
-          <h3 className="text-5xl md:text-6xl font-extrabold text-[#E25B45] leading-tight text-left w-1/2">
-            {slide.title2}
-          </h3>
-        </div>
-
-        {/* Description — nằm bên trái, căn trái */}
-        {/* Description — nằm bên phải, căn trái */}
-        <div className="w-full flex justify-end">
-          <p className="text-[#3D6A5A] text-lg md:text-xl leading-relaxed text-left max-w-xl">
-            {slide.description}
-          </p>
-        </div>
+    <div className="relative w-screen h-[80vh] max-h-[800px] overflow-hidden">
+      {/* Slide wrapper */}
+      <div
+        className="flex transition-transform duration-500 h-full"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {slides.map((slide) => (
+          <div key={slide.id} className="w-screen h-full flex-shrink-0 relative">
+            {/* Ảnh nền */}
+            <div className="w-full h-[80vh] bg-[#FFF8F3] flex items-center justify-center overflow-hidden">
+              <img
+                src={slide.image}
+                alt=""
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
 
 
-        {/* Label + Button giữ nguyên ở giữa */}
-        <div className="flex items-center justify-center gap-6 mt-4">
-          <p className="text-[#2D6753] font-semibold text-lg">{slide.label}</p>
-          <button className="bg-[#E25B45] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#d0503c] transition-all shadow-md">
-            SHOP NOW
-          </button>
-        </div>
+
+
+            {/* Chữ */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[10] text-white max-w-xl">
+              <div className="flex flex-col items-start text-5xl font-bold leading-none">
+                <span className="translate-y-[-100px] text-[#325C5C]"
+                  style={{ fontFamily: "'CustomFont', sans-serif" }}>
+                  Delight in
+                </span>
+                <span className='text-[#D46B55]'
+                  style={{
+                    fontFamily: "'CustomFont', sans-serif",
+                    marginLeft: 'calc(var(--custom-offset, 200px))'
+                  }}>every bites!</span>
+                <p className="mt-6 text-base text-[#325C5C] font-normal max-w-xs md:max-w-md lg:max-w-lg" style={{ marginLeft: 'calc(var(--custom-offset, 270px))' }} > Experience the joy of perfectly baked cakes, made with love and crafted to bring a smile to every celebration. </p>
+                {/* Nút và text sản phẩm */}
+                <div
+                  className="mt-4 flex items-center space-x-12"
+                  style={{
+                    fontSize: 'var(--custom-font-size, 0.875rem)', // default 14px (text-sm)
+                    transform: 'translateX(var(--custom-translate-x, 25px))',
+                  }}
+                >
+                  <span className="text-[#325C5C] font-semibold" style={{ fontSize: 'inherit' }}>
+                    — Choco Croissant (0.6$)
+                  </span>
+                  <button
+                    className="bg-[#D46B55] hover:bg-yellow-600 text-white font-bold rounded-full"
+                    style={{
+                      fontSize: 'calc(var(--custom-font-size, 0.875rem) * 0.85)', // chữ nhỏ hơn text
+                      padding: '0.375rem 1.5rem', // tăng padding ngang (px-6 ~ 1.5rem)
+                      marginLeft: '40px', // đẩy nút ra xa text
+                    }}
+                  >
+                    SHOP NOW
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* Navigation */}
+      {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/70 backdrop-blur-sm rounded-full p-3 border border-[#e67342] text-[#e67342] hover:bg-[#e67342] hover:text-white transition-all"
+        className="absolute top-1/2 left-6 -translate-y-1/2 text-white text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
+        aria-label="Previous Slide"
       >
-        <ChevronLeft size={28} />
+        ‹
       </button>
-
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/70 backdrop-blur-sm rounded-full p-3 border border-[#e67342] text-[#e67342] hover:bg-[#e67342] hover:text-white transition-all"
+        className="absolute top-1/2 right-6 -translate-y-1/2 text-white text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
+        aria-label="Next Slide"
       >
-        <ChevronRight size={28} />
+        ›
       </button>
-    </section>
+
+      {/* Dots */}
+      {/* <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2"> */}
+      {/* {slides.map((_, index) => ( */}
+      {/* <button */}
+      {/* key={index} */}
+      {/* onClick={() => setCurrentIndex(index)} */}
+      {/* className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-white/50' */}
+      {/* }`} */}
+      {/* /> */}
+      {/* ))} */}
+      {/* </div> */}
+
+    </div>
   );
-}
+};
+
+export default Carousel;
