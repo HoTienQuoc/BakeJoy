@@ -1,7 +1,6 @@
 import React from 'react';
 import laptopImage from '../images/deva-williamson-1.jpg'; // hoặc ảnh từ public
 
-
 interface ChatBubbleProps {
   message: string;
   author: string;
@@ -31,11 +30,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message, author, direction }) =
 
 const Demo = () => {
   return (
-    <div className="relative min-h-screen bg-[#2D544F] flex flex-col items-center justify-center py-20 px-6">
-      {/* Wave trên */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-[#F9E7DD] rounded-b-[50%_40%]"></div>
-      {/* Wave dưới */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#F9E7DD] rounded-t-[50%_40%]"></div>
+    <div className="relative min-h-screen bg-[#2D544F] flex flex-col items-center justify-center py-20 px-6">      
 
       <div className="relative flex items-center gap-16 max-w-5xl w-full z-10">
         {/* Chat trái */}

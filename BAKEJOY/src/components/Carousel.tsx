@@ -105,7 +105,7 @@ const Carousel: React.FC = () => {
       {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-6 -translate-y-1/2 text-[#325C5C] text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
+        className="absolute top-1/2 left-[100px] -translate-y-1/2 text-[#325C5C] text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
         aria-label="Previous Slide"
       >
         <ChevronLeft size={60}/>
@@ -113,7 +113,7 @@ const Carousel: React.FC = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-6 -translate-y-1/2 text-[#325C5C] text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
+        className="absolute top-1/2 right-[100px] -translate-y-1/2 text-[#325C5C] text-4xl font-bold drop-shadow-lg hover:scale-110 transition"
         aria-label="Next Slide"
       >
         <ChevronRight size={60}/>
