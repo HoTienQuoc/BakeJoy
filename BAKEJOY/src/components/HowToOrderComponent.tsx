@@ -50,7 +50,7 @@ const HowToOrderComponent: React.FC = () => {
               {/* Số thứ tự */}
               <div
                 className={`absolute left-1/2 -translate-x-1/2 w-16 h-16 bg-[#27594a] text-white text-2xl font-extrabold flex items-center justify-center rounded-full shadow-md ${
-                  isEven ? "-top-10" : "-bottom-8"
+                  isEven ? "-top-8" : "-bottom-8"
                 }`}
               >
                 {index + 1}

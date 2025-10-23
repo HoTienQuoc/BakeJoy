@@ -73,6 +73,68 @@
 }
 
 
+/* Bubble bên trái */
+.tooltip-left {
+    --b: 3em;
+    /* base */
+    --h: 1.8em;
+    /* height */
+    --t: 0.6;
+    /* thickness */
+    --p: 50%;
+    /* main position */
+    --r: 1.2em;
+    /* radius */
+
+    border-radius: var(--r)/var(--r) min(var(--r), var(--p) - (1 - var(--t)) * var(--b) / 2) min(var(--r), 100% - var(--p) - (1 - var(--t)) * var(--b) / 2) var(--r);
+    position: relative;
+}
+
+.tooltip-left::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: clamp(-1 * var(--t) * var(--b),
+            var(--p) - (var(--t) + 1) * var(--b) / 2,
+            100% - var(--b));
+    width: var(--h);
+    height: var(--b);
+    background: inherit;
+    border-bottom-right-radius: 100%;
+    -webkit-mask: radial-gradient(105% calc(var(--t) * 100%) at 0 0,
+            #0000 99%,
+            #000 101%);
+}
+
+/* Bubble bên phải */
+.tooltip-right {
+    --b: 3em;
+    --h: 1.8em;
+    --t: 0.6;
+    --p: 50%;
+    --r: 1.2em;
+
+    border-radius: var(--r) / min(var(--r), var(--p) - (1 - var(--t)) * var(--b) / 2) var(--r) var(--r) min(var(--r), 100% - var(--p) - (1 - var(--t)) * var(--b) / 2);
+    position: relative;
+}
+
+.tooltip-right::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: clamp(-1 * var(--t) * var(--b),
+            var(--p) - (var(--t) + 1) * var(--b) / 2,
+            100% - var(--b));
+    width: var(--h);
+    height: var(--b);
+    background: inherit;
+    border-bottom-left-radius: 100%;
+    -webkit-mask: radial-gradient(105% calc(var(--t) * 100%) at 100% 0,
+            #0000 99%,
+            #000 101%);
+}
+
+
 
 
 @import "tailwindcss";

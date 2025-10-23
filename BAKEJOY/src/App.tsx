@@ -3,7 +3,7 @@ import Carousel from "../src/components/Carousel";
 import Section7 from "../src/components/Section7";
 import FooterSection from "../src/components/FooterSection";
 import SignatureProducts from "./components/SignatureProducts";
-import Demo from "./components/Demo";
+import ChatBubbles from "./components/ChatBubbles";
 import BakeJoyComponent from "./components/BakeJoyComponent";
 import HowToOrderComponent from "./components/HowToOrderComponent";
 import CakeJournalComponent from "./components/CakeJournalComponent";
@@ -34,7 +34,7 @@ const App = () => {
       <WaveSeparator topColor="#FBE4D9" bottomColor="#2D544F" />
 
       <section className="w-full">
-        <Demo/>
+        <ChatBubbles/>
       </section>
 
       <WaveSeparator topColor="#2D544F" bottomColor="#FFF8F3" />
