@@ -8,7 +8,7 @@ import BakeJoyComponent from "./components/BakeJoyComponent";
 import HowToOrderComponent from "./components/HowToOrderComponent";
 import CakeJournalComponent from "./components/CakeJournalComponent";
 import WaveSeparator from './components/WaveSeparator';
-
+import TestimonialsSection from "./components/TestimonialCard";
 
 
 const App = () => {
