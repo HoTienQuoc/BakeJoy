@@ -35,7 +35,7 @@ const Carousel: React.FC = () => {
               <img
                 src={slide.image}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover mix-blend-multiply contrast-150"
               />
             </div>
 
